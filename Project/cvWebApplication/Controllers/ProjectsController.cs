@@ -4,15 +4,14 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using cvWebApplication.Models;
-
 namespace cvWebApplication.Controllers
 {
-	public class ProjectController : Controller
+	public class ProjectsController : Controller
 	{
-		// GET: Project
+		// GET: Projects
 		public ActionResult Random()
 		{
-			var project = new Project("hello","");
+			var project = new Project("hello", "");
 			return View(project);
 		}
 	}
