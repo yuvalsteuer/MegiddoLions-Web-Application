@@ -1,5 +1,5 @@
 ﻿body {
-	padding-top: 15%;
+	padding-top: 175px;
 	padding-bottom: 20px;
 }
 
@@ -16,11 +16,10 @@
 .navbar-brand {
 	float: left;
 	margin-bottom: 10px;
-	margin-top:10px;
-	margin-left:15px;
-	padding:0px 0px 0px 0px;
-	height:95%;
-	
+	margin-top: 10px;
+	margin-left: 15px;
+	padding: 0px 0px 0px 0px;
+	height: 97%;
 }
 	.navbar-brand img {
 		height:100%;
@@ -42,6 +41,7 @@
 		font-size: 20px;
 		margin-left:25px;
 		padding: 0px 0px 0px 0px;
+		color:aqua;
 	}
 
 
