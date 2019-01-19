@@ -1,31 +1,54 @@
 ﻿@{
-    ViewBag.Title = "Home Page";
+	ViewBag.Title = "Home Page";
 }
-
 <div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="https://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+	<h1>Team BIO</h1>
+	<p class="lead">
+		@*ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.*@
+		We are <i>'Megiddo Lions'</i> (5038), FRC team from Megiddo regional council, Northern District Israel.
+		<br />
+		Our team was established in 2013.
+		<br />
+		<i>'Megiddo Lions'</i> has won three competitions to this day, and participated in:
+		<ul>
+			<li style="font-size:16px;">4 Israeli Falalel competitions and also 4 district events.</li>
+			<li style="font-size:16px;">3 Israeli Regional FRC competitions</li>
+			<li style="font-size:16px;">2 israeli district championship and 2 off-season competitions.</li>
+			<li style="font-size:16px;">1 israeli spin-off event</li>
+		</ul>
+	</p>
+	<p><a href="/Home/About" class="btn btn-primary btn-lg" style="background-color:rgb(25,25,25); color:rgb(245,115,40);border-color:rgb(255,130,40);border-left-width:0px;border-right-width:0px;font-size:15px;">Learn more &raquo;</a></p>
 </div>
 
 <div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
+	<div class="col-md-3" style="margin-left:10px;height:100%;">
+		<h2 style="color: rgb(255,135,35);"><a id="button-link" href="/Home/Mentors">Mentors &raquo;</a></h2>
+		<p>
+			@*ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+				enables a clean separation of concerns and gives you full control over markup
+				for enjoyable, agile development.*@
+			Information about all the people who put time and dedication into us and guided us through crucial moments.
+		</p>
+		@*<a class="btn btn-default" style="background-color:rgb(25,25,25); color:rgb(245,115,40);border-color:rgb(255,130,40);border-width:1px;margin-left:50px;" href="https://go.microsoft.com/fwlink/?LinkId=301865">Mentors</a>*@
+	</div>
+	<div class="col-md-4" style="margin-left:10px; padding-right:0px;height:100%;">
+		<h2 style="color: rgb(255,135,35);"><a id="button-link" href="/Home/Sponsers">Sponsers &raquo;</a></h2>
+		<p>
+			@*ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
+			enables a clean separation of concerns and gives you full control over markup
+			for enjoyable, agile development.*@
+			Companies and individuals that make it possible for us to compete, and keep us going.
+		</p>
+		@*<a class="btn btn-default" style="background-color:rgb(25,25,25); color:rgb(245,115,40);border-color:rgb(255,130,40);border-width:1px;" href="https://go.microsoft.com/fwlink/?LinkId=301865">Sponsers.</a>*@
+	</div>
+	<div class="col-md-4" style="margin-left:10px; height:100%;">
+		<h2 style="color: rgb(255,135,35);"><a id="button-link" href="https://github.com/MegiddoLions5038">GitHub &raquo;</a></h2>
+		<p>We use Github to publish our team code online, handle version control and backup robot code.</p>
+		@*<a class="btn btn-default" style="background-color:rgb(25,25,25); color:rgb(245,105,40);border-color:rgb(255,130,40);border-width:1px;margin-bottom:10px;" href="https://go.microsoft.com/fwlink/?LinkId=301865">Sponsers.</a>*@
+	</div>
+	@*<div class="col-md-4">
+			<h2>Web Hosting</h2>
+			<p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
+			<p><a class="btn btn-default" href="https://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
+		</div>*@
 </div>

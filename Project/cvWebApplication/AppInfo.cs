@@ -7,6 +7,6 @@ namespace cvWebApplication
 {
 	public class Info
 	{
-		public const string ApplicationName = "Yuval Steuer Bio";
+		public const string ApplicationName = "Megiddo Lions Site";
 	}
 }

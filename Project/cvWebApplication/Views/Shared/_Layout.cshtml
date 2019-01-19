@@ -25,18 +25,32 @@
 				</div>
 
 			</div>
-			<div class="collapse navbar-collapse">
+
+			<div class="navbar-button-group">
 				<ul class="nav navbar-nav navbar-left">
-					<li>@Html.ActionLink("Home", "Index", "Home")</li>
-					<li>@Html.ActionLink("About", "About", "Home")</li>
-					<li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-				</ul>
+					<div class="btn-group" role="group" aria-label="navbar-button-group">
+
+						<button id="@(ViewContext.RouteData.Values["Action"].ToString() == "Index" ? "active-btn" : "home-btn")" type="button" class="btn btn-toolbar" onclick="location.href='/Home'">Home</button>
+						<button id="@(ViewContext.RouteData.Values["Action"].ToString() == "About" ? "active-btn" : "about-btn")" type="button" class="btn btn-toolbar" onclick="location.href='/Home/About'">About</button>
+						<button id="@(ViewContext.RouteData.Values["Action"].ToString() == "Contact" ? "active-btn" : "contact-btn")" type="button" class="btn btn-toolbar" onclick="location.href='/Home/Contact'">Contact</button>
+					</div>
+				</ul>	
+			</div>
+
+			<div class="collapse navbar-collapse">
+				<div class="collapsed-navbar">
+					<ul class="nav navbar-nav navbar-left">
+						<li>@Html.ActionLink("Home", "Index", "Home")</li>
+						<li>@Html.ActionLink("About", "About", "Home")</li>
+						<li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+					</ul>
+				</div>
 			</div>
 		</div>
 	</div>
 	<div class="container body-content">
 		@RenderBody()
-		<hr />
+		<hr style="border-color:rgb(255,135,35);"/>
 		<footer>
 			<p>&copy; @DateTime.Now.Year - Yuval Steuer</p>
 		</footer>
