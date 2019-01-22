@@ -46,6 +46,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="Google.Apis, Version=1.37.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
       <HintPath>..\packages\Google.Apis.1.37.0\lib\net45\Google.Apis.dll</HintPath>
     </Reference>
@@ -59,6 +65,8 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -159,14 +167,45 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MembersController.cs" />
     <Compile Include="Controllers\ProjectsController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\Project.cs" />
+    <Compile Include="Models\tblMember.cs">
+      <DependentUpon>UserMemberModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\tblUser.cs">
+      <DependentUpon>UserMemberModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserMemberModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserMemberModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserMemberModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserMemberModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\UserMemberModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>UserMemberModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\database.mdf" />
+    <Content Include="App_Data\database5038.mdf" />
+    <Content Include="App_Data\database5038_log.ldf">
+      <DependentUpon>database5038.mdf</DependentUpon>
+    </Content>
+    <Content Include="App_Data\database_log.ldf">
+      <DependentUpon>database.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-lumen.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -178,6 +217,16 @@
     <Content Include="Content\Site.css" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\logo2.png" />
+    <Content Include="Models\UserMemberModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>UserMemberModel.edmx</DependentUpon>
+      <LastGenOutput>UserMemberModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\UserMemberModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>UserMemberModel.edmx</DependentUpon>
+      <LastGenOutput>UserMemberModel.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -185,6 +234,13 @@
     </Content>
     <None Include="bundleconfig.json" />
     <Content Include="libman.json" />
+    <EntityDeploy Include="Models\UserMemberModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>UserMemberModel.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\UserMemberModel.edmx.diagram">
+      <DependentUpon>UserMemberModel.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
@@ -211,9 +267,19 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Projects\Random.cshtml" />
+    <Content Include="Views\Members\Create.cshtml" />
+    <Content Include="Views\Members\Delete.cshtml" />
+    <Content Include="Views\Members\Details.cshtml" />
+    <Content Include="Views\Members\Edit.cshtml" />
+    <Content Include="Views\Members\Index.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

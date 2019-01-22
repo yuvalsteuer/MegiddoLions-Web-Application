@@ -1,0 +1,86 @@
+﻿@model cvWebApplication.Models.tblMember
+
+@{
+	ViewBag.Title = "Create Member";
+	Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<h2 style="margin-left:40px;margin-top:40px;color:rgb(255,135,35);">Create Member</h2>
+<hr style="margin-left:15px;margin-right:15px;border-style:dotted;border-color:rgb(255,135,35);" />
+<div style="border-style:outset;border-radius:8px;margin-left:15px;margin-right:15px;" class="jumbotron">
+	@using (Html.BeginForm())
+	{
+		@Html.AntiForgeryToken()
+
+		<div class="form-horizontal">
+			<h3></h3>
+			@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+			<div class="form-group">
+				@Html.LabelFor(model => model.MemberID, htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@Html.EditorFor(model => model.MemberID, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.MemberID, "", new { @class = "text-danger" })
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.FirstName, htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@Html.EditorFor(model => model.FirstName, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.FirstName, "", new { @class = "text-danger" })
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.LastName, htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@Html.EditorFor(model => model.LastName, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.LastName, "", new { @class = "text-danger" })
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.JoinDate, htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@Html.EditorFor(model => model.JoinDate, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.JoinDate, "", new { @class = "text-danger" })
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.BirthDate, htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@Html.EditorFor(model => model.BirthDate, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.BirthDate, "", new { @class = "text-danger" })
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.PrimaryRole, htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@Html.EditorFor(model => model.PrimaryRole, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.PrimaryRole, "", new { @class = "text-danger" })
+				</div>
+			</div>
+
+			<div class="form-group">
+				@Html.LabelFor(model => model.SecondaryRole, htmlAttributes: new { @class = "control-label col-md-2" })
+				<div class="col-md-10">
+					@Html.EditorFor(model => model.SecondaryRole, new { htmlAttributes = new { @class = "form-control" } })
+					@Html.ValidationMessageFor(model => model.SecondaryRole, "", new { @class = "text-danger" })
+				</div>
+			</div>
+
+			<div class="form-group">
+				<div class="col-md-offset-2 col-md-10">
+					<input type="submit" value="Create" class="btn btn-default" />
+				</div>
+			</div>
+		</div>
+	}
+
+	<div>
+		@Html.ActionLink("Back to List", "Index")
+	</div>
+</div>
