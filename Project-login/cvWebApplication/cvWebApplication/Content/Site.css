@@ -4,6 +4,16 @@
 	padding-bottom: 20px;
 }
 
+.btn-group > #login-and-register-btn:hover {
+	border-bottom-width:3px;
+	margin-bottom:0px;
+	padding-bottom:0px;
+}
+.btn-group > #login-and-register-btn:default {
+	border-bottom-width: 4px;
+	margin-bottom: 0px;
+	padding-bottom: 0px;
+}
 .jumbotron {
 	padding-top: 30px;
 	margin-left: 7px;
