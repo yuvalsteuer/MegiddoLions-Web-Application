@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="MegiddoLionsDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="tblMember">
+    <Key>
+      <PropertyRef Name="MemberID" />
+    </Key>
+    <Property Name="MemberID" Type="Int32" Nullable="false" />
+    <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="JoinDate" Type="DateTime" Precision="0" />
+    <Property Name="BirthDate" Type="DateTime" Precision="0" />
+    <Property Name="PrimaryRole" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="SecondaryRole" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tblUsers" Relationship="Self.FK_tblUsers_tblMembers" FromRole="tblMembers" ToRole="tblUsers" />
+  </EntityType>
+  <EntityType Name="tblUser">
+    <Key>
+      <PropertyRef Name="MemberID" />
+      <PropertyRef Name="Username" />
+      <PropertyRef Name="Password" />
+    </Key>
+    <Property Name="MemberID" Type="Int32" Nullable="false" />
+    <Property Name="Username" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Password" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Email" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="tblMember" Relationship="Self.FK_tblUsers_tblMembers" FromRole="tblUsers" ToRole="tblMembers" />
+  </EntityType>
+  <Association Name="FK_tblUsers_tblMembers">
+    <End Role="tblMembers" Type="Self.tblMember" Multiplicity="1" />
+    <End Role="tblUsers" Type="Self.tblUser" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblMembers">
+        <PropertyRef Name="MemberID" />
+      </Principal>
+      <Dependent Role="tblUsers">
+        <PropertyRef Name="MemberID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="MegiddoLionsEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="tblMembers" EntityType="Self.tblMember" />
+    <EntitySet Name="tblUsers" EntityType="Self.tblUser" />
+    <AssociationSet Name="FK_tblUsers_tblMembers" Association="Self.FK_tblUsers_tblMembers">
+      <End Role="tblMembers" EntitySet="tblMembers" />
+      <End Role="tblUsers" EntitySet="tblUsers" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
