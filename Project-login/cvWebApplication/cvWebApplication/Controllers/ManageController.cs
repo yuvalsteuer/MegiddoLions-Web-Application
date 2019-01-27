@@ -72,7 +72,8 @@ namespace cvWebApplication.Controllers
                 Logins = await UserManager.GetLoginsAsync(userId),
                 BrowserRemembered = await AuthenticationManager.TwoFactorBrowserRememberedAsync(userId)
             };
-            return View(model);
+			_signInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+			return View(model);
         }
 
         //
@@ -85,6 +86,7 @@ namespace cvWebApplication.Controllers
             var result = await UserManager.RemoveLoginAsync(User.Identity.GetUserId(), new UserLoginInfo(loginProvider, providerKey));
             if (result.Succeeded)
             {
+				
                 var user = await UserManager.FindByIdAsync(User.Identity.GetUserId());
                 if (user != null)
                 {
