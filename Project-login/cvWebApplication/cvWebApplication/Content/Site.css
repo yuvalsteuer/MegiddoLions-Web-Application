@@ -14,6 +14,20 @@
 	margin-bottom: 0px;
 	padding-bottom: 0px;
 }
+.navbar {
+	border-bottom-width:3px;
+}
+#head-navbar-collapse-ul > li > a, #register-link, #login-link, #manage-link, #logout-link{
+	padding-left:0px;
+	font-size: 16px !important;
+	margin-left: 0px !important;
+}
+#logout-link {
+	color:rgb(175,20,20);
+}
+#collapsed-navbar-container {
+	background-color: rgb(25,25,25);
+}
 .jumbotron {
 	padding-top: 30px;
 	margin-left: 7px;
@@ -22,6 +36,7 @@
 	background-color: rgb(110,110,110);
 	color: rgb(220,220,220);
 	border-color: rgb(255,135,35);
+
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -96,6 +111,13 @@
 		padding-bottom: 0px;
 		margin-bottom: 0px;
 	}
+	#collapsed-navbar-container{
+		border-top-width:1px;
+		border-color:rgb(255,135,35);
+		border-top-style:dotted;
+	}
+
+
 }
 @media (min-width: 768px) {
 	.collapsed-navbar {

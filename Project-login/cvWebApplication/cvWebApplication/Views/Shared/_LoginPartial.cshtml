@@ -1,22 +1,30 @@
 ﻿@using Microsoft.AspNet.Identity
 @if (Request.IsAuthenticated)
 {
-    using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
-    {
-    @Html.AntiForgeryToken()
+	using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutCollapesedForm" }))
+	{
+		@Html.AntiForgeryToken()
 
-    <ul class="nav navbar-nav navbar-right">
-        <li>
-            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: null, htmlAttributes: new { title = "Manage" })
-        </li>
-        <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
-    </ul>
-    }
+
+		<div class="navbar-button-group">
+			<ul class="nav navbar-nav navbar-right">
+				<div class="btn-group" role="group" aria-label="navbar-button-group">
+					<button id="@(ViewContext.RouteData.Values["Action"].ToString() == "Manage" ? "active-btn" : "manage-btn")" type="button" class="btn btn-toolbar" onclick="location.href='/Manage'" style="border-top-width:0px;">Manage Account</button>
+					<button id="logout-btn" type="button" class="btn btn-toolbar" onclick="javascript:document.getElementById('logoutForm').submit()" style="border-top-width:0px;color:rgb(180,10,10);border-bottom-color:rgb(180,10,10);background-color:rgb(20,20,20);">Logout</button>
+				</div>
+			</ul>
+		</div>
+	}
 }
 else
 {
-    <ul class="nav navbar-nav navbar-right">
-        <li>@Html.ActionLink("Register", "Register", "Account", routeValues: null, htmlAttributes: new { id = "registerLink" })</li>
-        <li>@Html.ActionLink("Log in", "Login", "Account", routeValues: null, htmlAttributes: new { id = "loginLink" })</li>
-    </ul>
+	<div class="navbar-button-group">
+		<ul class="nav navbar-nav navbar-right">
+			<div class="btn-group" role="group" aria-label="navbar-button-group">
+				<button id="@(ViewContext.RouteData.Values["Action"].ToString() == "Register" ? "active-btn" : "register-btn")" type="button" class="btn btn-toolbar" onclick="location.href='/Account/Register'" style="border-top-width:0px;">Register</button>
+				<button id="@(ViewContext.RouteData.Values["Action"].ToString() == "Login" ? "active-btn" : "login-btn")" type="button" class="btn btn-toolbar" onclick="location.href='/Account/Login'" style="border-top-width:0px;">Login</button>
+			</div>
+		</ul>
+	</div>
+
 }

@@ -400,7 +400,7 @@ namespace cvWebApplication.Controllers
         [AllowAnonymous]
         public ActionResult ExternalLoginFailure()
         {
-            return View();
+            return View();		
         }
 
         protected override void Dispose(bool disposing)
