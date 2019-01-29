@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="MegiddoLionsDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="tblMembers">
+  <EntityType Name="tblMember">
     <Key>
       <PropertyRef Name="MemberID" />
     </Key>
@@ -12,33 +12,33 @@
     <Property Name="PrimaryRole" Type="text" />
     <Property Name="SecondaryRole" Type="text" />
   </EntityType>
-  <EntityType Name="tblUsers">
+  <EntityType Name="tblUser">
     <Key>
       <PropertyRef Name="MemberID" />
     </Key>
     <Property Name="MemberID" Type="int" Nullable="false" />
     <Property Name="Username" Type="text" Nullable="false" />
     <Property Name="Password" Type="text" Nullable="false" />
-    <Property Name="Email" Type="text" />
+    <Property Name="Email" Type="text" Nullable="false" />
   </EntityType>
-  <Association Name="FK_tblUsers_tblMembers">
-    <End Role="tblMembers" Type="Self.tblMembers" Multiplicity="1" />
-    <End Role="tblUsers" Type="Self.tblUsers" Multiplicity="0..1" />
+  <Association Name="FK_tblUser_tblMember">
+    <End Role="tblMember" Type="Self.tblMember" Multiplicity="1" />
+    <End Role="tblUser" Type="Self.tblUser" Multiplicity="0..1" />
     <ReferentialConstraint>
-      <Principal Role="tblMembers">
+      <Principal Role="tblMember">
         <PropertyRef Name="MemberID" />
       </Principal>
-      <Dependent Role="tblUsers">
+      <Dependent Role="tblUser">
         <PropertyRef Name="MemberID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <EntityContainer Name="MegiddoLionsDBModelStoreContainer">
-    <EntitySet Name="tblMembers" EntityType="Self.tblMembers" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="tblUsers" EntityType="Self.tblUsers" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_tblUsers_tblMembers" Association="Self.FK_tblUsers_tblMembers">
-      <End Role="tblMembers" EntitySet="tblMembers" />
-      <End Role="tblUsers" EntitySet="tblUsers" />
+    <EntitySet Name="tblMember" EntityType="Self.tblMember" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tblUser" EntityType="Self.tblUser" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_tblUser_tblMember" Association="Self.FK_tblUser_tblMember">
+      <End Role="tblMember" EntitySet="tblMember" />
+      <End Role="tblUser" EntitySet="tblUser" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

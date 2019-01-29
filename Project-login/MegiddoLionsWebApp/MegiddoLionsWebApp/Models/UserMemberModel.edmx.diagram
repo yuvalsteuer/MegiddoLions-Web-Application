@@ -4,11 +4,10 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="9d295ae6058349289f48050f99f9f698" Name="Diagram1" ZoomLevel="150">
-        <EntityTypeShape EntityType="MegiddoLionsDBModel.tblMember" Width="1.5" PointX="8.125" PointY="2.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="MegiddoLionsDBModel.tblUser" Width="1.5" PointX="2.375" PointY="2" IsExpanded="true" />
-        <AssociationConnector Association="MegiddoLionsDBModel.FK_tblUsers_tblMembers" ManuallyRouted="false" >
-        </AssociationConnector>
+      <Diagram DiagramId="9e4fa0fa7bc247a8880e724153282318" Name="Diagram1">
+        <EntityTypeShape EntityType="MegiddoLionsDBModel.tblMember" Width="1.5" PointX="1.875" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="MegiddoLionsDBModel.tblUser" Width="1.5" PointX="7.25" PointY="1.375" IsExpanded="true" />
+        <AssociationConnector Association="MegiddoLionsDBModel.FK_tblUser_tblMember" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -3,7 +3,7 @@
   <EntityContainerMapping StorageEntityContainer="MegiddoLionsDBModelStoreContainer" CdmEntityContainer="MegiddoLionsEntities">
     <EntitySetMapping Name="tblMembers">
       <EntityTypeMapping TypeName="MegiddoLionsDBModel.tblMember">
-        <MappingFragment StoreEntitySet="tblMembers">
+        <MappingFragment StoreEntitySet="tblMember">
           <ScalarProperty Name="MemberID" ColumnName="MemberID" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="LastName" ColumnName="LastName" />
@@ -16,7 +16,7 @@
     </EntitySetMapping>
     <EntitySetMapping Name="tblUsers">
       <EntityTypeMapping TypeName="MegiddoLionsDBModel.tblUser">
-        <MappingFragment StoreEntitySet="tblUsers">
+        <MappingFragment StoreEntitySet="tblUser">
           <ScalarProperty Name="MemberID" ColumnName="MemberID" />
           <ScalarProperty Name="Username" ColumnName="Username" />
           <ScalarProperty Name="Password" ColumnName="Password" />

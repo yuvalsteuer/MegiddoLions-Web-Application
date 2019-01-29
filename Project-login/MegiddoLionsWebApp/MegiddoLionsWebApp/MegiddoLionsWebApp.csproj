@@ -216,6 +216,10 @@
     <Content Include="App_Data\aspnet-MegiddoLionsWebApp-20190125013513_log.ldf">
       <DependentUpon>aspnet-MegiddoLionsWebApp-20190125013513.mdf</DependentUpon>
     </Content>
+    <Content Include="App_Data\MegiddoLionsEntities.mdf" />
+    <Content Include="App_Data\MegiddoLionsEntities_log.ldf">
+      <DependentUpon>MegiddoLionsEntities.mdf</DependentUpon>
+    </Content>
     <Content Include="Content\bootstrap-lumen.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />

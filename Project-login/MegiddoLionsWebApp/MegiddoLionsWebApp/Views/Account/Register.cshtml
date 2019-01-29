@@ -1,41 +1,45 @@
 ﻿@model MegiddoLionsWebApp.Models.RegisterViewModel
 @{
-    ViewBag.Title = "Register";
+				/**/
+
+				ViewBag.Title = "Register";
 }
 
-<h2>@ViewBag.Title.</h2>
+<h2 style="margin-left:35px;margin-top:30px;border-right:none;border-left:none;">@ViewBag.Title</h2>
 
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
-    @Html.AntiForgeryToken()
-    <h4>Create a new account.</h4>
-    <hr />
-    @Html.ValidationSummary("", new { @class = "text-danger" })
-    <div class="form-group">
-        @Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        @Html.LabelFor(m => m.ConfirmPassword, new { @class = "col-md-2 control-label" })
-        <div class="col-md-10">
-            @Html.PasswordFor(m => m.ConfirmPassword, new { @class = "form-control" })
-        </div>
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <input type="submit" class="btn btn-default" value="Register" />
-        </div>
-    </div>
+
+	@Html.AntiForgeryToken()
+	<hr style="margin-left:25px;margin-right:25px;border-style:dotted;border-color:rgb(255,135,35);" />
+	<div class="jumbotron" style="background-color:rgb(100,100,100);border:none;margin-left:30px;margin-right:30px;">
+		@Html.ValidationSummary("", new { @class = "text-danger" })
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="Email" style="color:rgb(215,215,215)">Email</label>
+			<div class="col-md-10">
+				<input style="background-color:rgb(35,35,35);border:none;color:rgb(255,135,35);box-shadow:none;" class="form-control" data-val="true" data-val-email="The Email field is not a valid e-mail address." data-val-required="The Email field is required." id="Email" name="Email" type="text" value="" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="Password" style="color:rgb(215,215,215)">Password</label>
+			<div class="col-md-10">
+				<input style="background-color:rgb(35,35,35);color:rgb(255,135,35);border:none;box-shadow:none;" class="form-control" data-val="true" data-val-length="The Password must be at least 6 characters long." data-val-length-max="100" data-val-length-min="6" data-val-required="The Password field is required." id="Password" name="Password" type="password" />
+			</div>
+		</div>
+		<div class="form-group">
+			<label class="col-md-2 control-label" for="ConfirmPassword" style="color:rgb(215,215,215)">Confirm password</label>
+			<div class="col-md-10">
+				<input style="background-color:rgb(35,35,35);border:none;color:rgb(255,135,35);box-shadow:none;" class="form-control" data-val="true" data-val-equalto="The password and confirmation password do not match." data-val-equalto-other="*.Password" id="ConfirmPassword" name="ConfirmPassword" type="password" />
+			</div>
+		</div>
+		<div class="form-group">
+			<div class="col-md-offset-2 col-md-10">
+				<input type="submit" class="btn btn-default" value="Register" style="background-color:rgb(25,25,25);color:rgb(255,135,35);border-color:rgb(255,135,35);border-left:none;border-right:none;margin-bottom:0px;" />
+			</div>
+		</div>
+	</div>
 }
 
 @section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+	@Scripts.Render("~/bundles/jqueryval")
 }
