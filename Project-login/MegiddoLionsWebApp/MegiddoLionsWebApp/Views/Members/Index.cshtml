@@ -1,0 +1,64 @@
+﻿@model IEnumerable<MegiddoLionsWebApp.Models.tblMember>
+
+@{
+    ViewBag.Title = "Members";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Members</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.JoinDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BirthDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.PrimaryRole)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.SecondaryRole)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.LastName)
+        </td>
+        <td>
+            @DateTime.Parse(item.JoinDate.ToString()).ToShortDateString()
+        </td>
+        <td>
+            @DateTime.Parse(item.BirthDate.ToString()).ToShortDateString()
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.PrimaryRole)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SecondaryRole)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.MemberID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.MemberID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.MemberID })
+        </td>
+    </tr>
+}
+
+</table>
