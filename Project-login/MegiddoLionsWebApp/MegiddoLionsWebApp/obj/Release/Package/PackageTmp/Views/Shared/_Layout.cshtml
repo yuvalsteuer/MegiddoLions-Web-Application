@@ -9,7 +9,8 @@
 	@Scripts.Render("~/bundles/modernizr")
 </head>
 <body>
-	<div class="navbar navbar-inverse navbar-fixed-top" id="navbar-complete">
+	@*navbar navbar-inverse navbar-static-top *@
+	<div class="navbar transparent navbar-inverse navbar-static-top " id="navbar-complete" style="margin-top:0px;padding-top:0px;">
 		<div class="container">
 			<div class="navbar-header">
 
@@ -41,7 +42,7 @@
 		</div>
 		<div class="collapse navbar-collapse" id="collapsed-navbar-container">
 			<div class="collapsed-navbar">
-				<ul id="head-navbar-collapse-ul" class="nav navbar-nav navbar-left"> 
+				<ul id="head-navbar-collapse-ul" class="nav navbar-nav navbar-left">
 					<li><a href="/" style="width:50%">Home</a></li>
 					<li><a href="/Home/About" style="width:50%;">About</a></li>
 					<li><a href="/Home/Contact" style="width:50%;">Contact</a></li>
@@ -54,7 +55,7 @@
 
 	<div class="container body-content">
 		@RenderBody()
-		<hr style="border-color:rgb(255,135,35);" />	
+		<hr style="border-color:rgb(255,135,35);" />
 		<footer>
 			<p style="font-size:12px;">&copy; @DateTime.Now.Year - Yuval Steuer</p>
 		</footer>
