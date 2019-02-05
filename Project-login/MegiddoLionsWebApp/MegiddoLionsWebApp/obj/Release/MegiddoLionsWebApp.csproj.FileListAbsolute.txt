@@ -102,7 +102,6 @@ C:\Users\yuval\Desktop\webRepo\MegiddoLions-Web-Application\Project-login\Megidd
 C:\Users\yuval\Desktop\webRepo\MegiddoLions-Web-Application\Project-login\MegiddoLionsWebApp\MegiddoLionsWebApp\bin\System.Diagnostics.DiagnosticSource.xml
 C:\Users\yuval\Desktop\webRepo\MegiddoLions-Web-Application\Project-login\MegiddoLionsWebApp\MegiddoLionsWebApp\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 C:\Users\yuval\Desktop\webRepo\MegiddoLions-Web-Application\Project-login\MegiddoLionsWebApp\MegiddoLionsWebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\yuval\Desktop\webRepo\MegiddoLions-Web-Application\Project-login\MegiddoLionsWebApp\MegiddoLionsWebApp\obj\Release\MegiddoLionsWebApp.csprojAssemblyReference.cache
 C:\Users\yuval\Desktop\webRepo\MegiddoLions-Web-Application\Project-login\MegiddoLionsWebApp\MegiddoLionsWebApp\obj\Release\MegiddoLionsWebApp.csproj.CoreCompileInputs.cache
 C:\Users\yuval\Desktop\webRepo\MegiddoLions-Web-Application\Project-login\MegiddoLionsWebApp\MegiddoLionsWebApp\obj\Release\MegiddoLionsWebApp.csproj.CopyComplete
 C:\Users\yuval\Desktop\webRepo\MegiddoLions-Web-Application\Project-login\MegiddoLionsWebApp\MegiddoLionsWebApp\obj\Release\MegiddoLionsWebApp.dll
