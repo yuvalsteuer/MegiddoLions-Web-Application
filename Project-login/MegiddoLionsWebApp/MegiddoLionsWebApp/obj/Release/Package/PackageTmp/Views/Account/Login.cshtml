@@ -1,65 +1,69 @@
-﻿	@using MegiddoLionsWebApp.Models
+﻿@using MegiddoLionsWebApp.Models
 @model LoginViewModel
 @{
 	ViewBag.Title = "Log in";
 }
 
 <h2>@ViewBag.Title</h2>
+<hr style="border-color:rgb(255,135,35);border-width:0.5px;border-style:dotted;border-right:none;border-left:none;" />
+<div class="jumbotron" style="background-color:rgb(100,100,100);border:none;margin-left:20px;margin-right:20px;">
+	<div class="row">
+		<div class="col-md-8">
+			<section id="loginForm">
+				@using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+				{
+					@Html.AntiForgeryToken()
+				
 
-<div class="row">
-	<div class="col-md-8">
-		<section id="loginForm">
-			@using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-			{
-				@Html.AntiForgeryToken()
-				<hr style="border-color:rgb(255,135,35);border-width:0.5px;border-style:solid;border-right:none;border-left:none;" />
-
-				@Html.ValidationSummary(true, "", new { @class = "text-danger" })
-				<div class="form-group">
-					@Html.LabelFor(m => m.Email, new { @class = "col-md-2 control-label" })
-					<div class="col-md-10">
-						@Html.TextBoxFor(m => m.Email, new { @class = "form-control" })
-						@Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
-					</div>
-				</div>
-				<div class="form-group">
-					@Html.LabelFor(m => m.Password, new { @class = "col-md-2 control-label" })
-					<div class="col-md-10">
-						@Html.PasswordFor(m => m.Password, new { @class = "form-control" })
-						@Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
-					</div>
-				</div>
-				<div class="form-group">
-					<div class="col-md-offset-2 col-md-10">
-						<div class="checkbox" style="margin-left:40px;">
-							<input data-val="true" data-val-required="The Remember me? field is required." id="RememberMe" name="RememberMe" type="checkbox" value="true" />
-							<input name="RememberMe" type="hidden" value="false" />
-							@Html.LabelFor(m => m.RememberMe)
+					@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="Email" style="color:rgb(215,215,215)">Email</label>
+						<div class="col-md-10">
+							<input style="background-color:rgb(35,35,35);border:none;color:rgb(255,135,35);box-shadow:none;margin-right:0px;padding-right:0px;" class="form-control" data-val="true" data-val-email="The Email field is not a valid e-mail address." data-val-required="The Email field is required." id="Email" name="Email" type="text" value="" />
+							@Html.ValidationMessageFor(m => m.Email, "", new { @class = "text-danger" })
 						</div>
 					</div>
-				</div>
-				<div class="form-group">
-					<div class="col-md-offset-2 col-md-10">
-						<input type="submit" value="Log in" class="btn btn-default" />
+					<div class="form-group">
+						<label class="col-md-2 control-label" for="Password" style="color:rgb(215,215,215)">Password</label>
+						<div class="col-md-10">
+							<input style="background-color:rgb(35,35,35);color:rgb(255,135,35);border:none;box-shadow:none;" class="form-control" data-val="true" data-val-length="The Password must be at least 6 characters long." data-val-length-max="100" data-val-length-min="6" data-val-required="The Password field is required." id="Password" name="Password" type="password" />
+							@Html.ValidationMessageFor(m => m.Password, "", new { @class = "text-danger" })
+						</div>
 					</div>
-				</div>
-				<p>
-					@Html.ActionLink("Register as a new user", "Register")
-				</p>
-				@* Enable this once you have account confirmation enabled for password reset functionality
-			<p>
-				@Html.ActionLink("Forgot your password?", "ForgotPassword")
-			</p>*@
-			}
-		</section>
-	</div>
-	<div class="col-md-4">
-		<section id="socialLoginForm">
-			@Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-		</section>
+					<div class="form-group">
+						<div class="col-md-offset-2 col-md-10">
+							<div class="checkbox" style="margin-left:40px;">
+								<input data-val="true" data-val-required="The Remember me? field is required." id="RememberMe" name="RememberMe" type="checkbox" value="true" />
+								<input name="RememberMe" type="hidden" value="false" />
+								@Html.LabelFor(m => m.RememberMe)
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<div class="col-md-offset-2 col-md-10">
+							<input type="submit" value="Log in" class="btn btn-default" style="margin-left:20px;background-color:rgb(25,25,25);color:rgb(255,135,35);border-color:rgb(255,135,35);border-left:none;border-right:none;margin-bottom:0px;" />
+						</div>
+					</div>
+					<p>
+						<a style="margin-left:30px;" href="/Account/Register">Register as a new user</a>
+					</p>
+					@* Enable this once you have account confirmation enabled for password reset functionality
+						<p>
+							@Html.ActionLink("Forgot your password?", "ForgotPassword")
+						</p>*@
+
+				}
+			</section>
+		</div>
+		<div class="col-md-4">
+			<div class="g-recaptcha" data-sitekey="6Lcca44UAAAAADLp_vFGCTr4QOhyykuKzgIYEHoY"></div>
+			@*Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl }).ToHtmlString()*@
+
+		</div>
 	</div>
 </div>
 
-@section Scripts {
-	@Scripts.Render("~/bundles/jqueryval")
-}
+
+	@section Scripts {
+		@Scripts.Render("~/bundles/jqueryval")
+	}

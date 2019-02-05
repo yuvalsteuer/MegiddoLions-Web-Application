@@ -5,15 +5,16 @@
 }
 
 <h2>@ViewBag.Title</h2>
+<hr style="border-color:rgb(255,135,35);border-width:0.5px;border-style:dotted;border-right:none;border-left:none;" />
+<div class="jumbotron" style="background-color:rgb(100,100,100);border:none;margin-left:20px;margin-right:20px;">
+	<div class="row">
+		<div class="col-md-8">
+			<section id="loginForm">
+				@using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+				{
+					@Html.AntiForgeryToken()
+				
 
-<div class="row">
-	<div class="col-md-8">
-		<section id="loginForm">
-			@using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-			{
-				@Html.AntiForgeryToken()
-				<hr style="border-color:rgb(255,135,35);border-width:0.5px;border-style:dotted;border-right:none;border-left:none;" />
-				<div class="jumbotron" style="background-color:rgb(100,100,100);border:none;margin-left:20px;margin-right:20px;">
 					@Html.ValidationSummary(true, "", new { @class = "text-danger" })
 					<div class="form-group">
 						<label class="col-md-2 control-label" for="Email" style="color:rgb(215,215,215)">Email</label>
@@ -43,26 +44,26 @@
 							<input type="submit" value="Log in" class="btn btn-default" style="margin-left:20px;background-color:rgb(25,25,25);color:rgb(255,135,35);border-color:rgb(255,135,35);border-left:none;border-right:none;margin-bottom:0px;" />
 						</div>
 					</div>
-				</div>
-				<p>
-					<a style="margin-left:30px;" href="/Account/Register">Register as a new user</a>
-				</p>
-				@* Enable this once you have account confirmation enabled for password reset functionality
 					<p>
-						@Html.ActionLink("Forgot your password?", "ForgotPassword")
-					</p>*@
+						<a style="margin-left:30px;" href="/Account/Register">Register as a new user</a>
+					</p>
+					@* Enable this once you have account confirmation enabled for password reset functionality
+						<p>
+							@Html.ActionLink("Forgot your password?", "ForgotPassword")
+						</p>*@
 
-			}
-		</section>
+				}
+			</section>
+		</div>
+		<div class="col-md-4">
+			<div class="g-recaptcha" data-sitekey="6Lcca44UAAAAADLp_vFGCTr4QOhyykuKzgIYEHoY"></div>
+			@*Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl }).ToHtmlString()*@
+
+		</div>
 	</div>
-	@*<div class="col-md-4">
-		<section id="socialLoginForm">
-			@Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
-		</section>
-	</div>*@
 </div>
 
 
-@section Scripts {
-	@Scripts.Render("~/bundles/jqueryval")
-}
+	@section Scripts {
+		@Scripts.Render("~/bundles/jqueryval")
+	}
