@@ -3423,7 +3423,7 @@ input[type="button"].btn-block {
   width: 100%;
 }
 .fade {
-  opacity: 0;
+  opacity: 100;
   transition: opacity 0.15s linear;
 }
 .fade.in {

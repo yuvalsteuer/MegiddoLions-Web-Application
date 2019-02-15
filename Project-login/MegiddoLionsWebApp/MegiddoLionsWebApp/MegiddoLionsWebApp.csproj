@@ -341,6 +341,16 @@
     <Content Include="Images\favicon.ico" />
     <Content Include="Images\logo.png" />
     <Content Include="Images\logo2.png" />
+    <Content Include="Images\MemberImages\2017Robot.jpeg" />
+    <Content Include="Images\MemberImages\arenaView.jpeg" />
+    <Content Include="Images\MemberImages\competitionPit.jpeg" />
+    <Content Include="Images\MemberImages\havingFun.jpeg" />
+    <Content Include="Images\MemberImages\perry.jpeg" />
+    <Content Include="Images\MemberImages\robot.jpeg" />
+    <Content Include="Images\MemberImages\robotB.jpeg" />
+    <Content Include="Images\MemberImages\tallRobot.jpeg" />
+    <Content Include="Images\MemberImages\yamYuvalAndSteuer.jpeg" />
+    <Content Include="Images\MemberImages\yogerAndRon.jpeg" />
     <Content Include="Models\UserMemberModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>UserMemberModel.edmx</DependentUpon>
